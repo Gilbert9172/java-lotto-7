@@ -19,7 +19,7 @@ public class ThousandUnitValidator extends InputValidator {
     public void check(final String source) {
         Money money = IOPreprocessor.stringToMoney(source);
 
-        if (money.hasSmallChange()) {
+        if (money.lowerThanMinLottoPrice() || money.hasSmallChange()) {
             throw invalidUnit();
         }
 

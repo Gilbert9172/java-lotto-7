@@ -62,6 +62,10 @@ public class Money {
         return (int) (this.value / LOTTO_PRICE.value);
     }
 
+    public boolean lowerThanMinLottoPrice() {
+        return this.value < LOTTO_PRICE.value;
+    }
+
     public boolean hasSmallChange() {
         return this.value % LOTTO_PRICE.value != 0;
     }
