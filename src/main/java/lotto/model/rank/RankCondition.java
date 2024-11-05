@@ -14,12 +14,12 @@ import lotto.model.money.Money;
 
 public enum RankCondition {
 
-    FIRST(6, (count, bonus) -> count == 6 && !bonus, FIRST_RANK_PRIZE),
-    SECOND(5, (count, bonus) -> count == 5 && bonus, SECOND_RANK_PRIZE),
-    THIRD(5, (count, bonus) -> count == 5 && !bonus, THIRD_RANK_PRIZE),
-    FOURTH(4, (count, bonus) -> count == 4 && !bonus, FOURTH_RANK_PRIZE),
+    NONE(0, (count, bonus) -> count == 6 && !bonus, ZERO),
     FIFTH(3, (count, bonus) -> count == 3 && !bonus, FIFTH_RANK_PRIZE),
-    NONE(0, (count, bonus) -> count == 6 && !bonus, ZERO);
+    FOURTH(4, (count, bonus) -> count == 4 && !bonus, FOURTH_RANK_PRIZE),
+    THIRD(5, (count, bonus) -> count == 5 && !bonus, THIRD_RANK_PRIZE),
+    SECOND(5, (count, bonus) -> count == 5 && bonus, SECOND_RANK_PRIZE),
+    FIRST(6, (count, bonus) -> count == 6 && !bonus, FIRST_RANK_PRIZE);
 
     private final Integer matchingCount;
     private final BiPredicate<Integer, Boolean> predicate;
