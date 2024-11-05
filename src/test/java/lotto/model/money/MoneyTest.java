@@ -18,7 +18,7 @@ public class MoneyTest {
         Money money = MoneyHelper.mock(8000);
 
         // when
-        long actual = money.calculatePurchasedLottoCount();
+        long actual = money.divideByLottoPrice();
 
         // then
         long expected = 8;
@@ -34,7 +34,7 @@ public class MoneyTest {
         // when & then
         assertThrows(
                 InvalidUnitAmountException.class,
-                money::calculatePurchasedLottoCount,
+                money::divideByLottoPrice,
                 INVALID_UNIT_AMOUNT
         );
     }

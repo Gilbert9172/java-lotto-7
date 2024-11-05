@@ -10,11 +10,13 @@ import java.util.List;
 import java.util.stream.Stream;
 import lotto.model.lotto.Lotto;
 import lotto.model.lotto.Lottos;
+import lotto.model.money.Money;
 
 public class RandomLottoGenerator implements LottoGenerator {
 
     @Override
-    public Lottos generate(final int lottoCount) {
+    public Lottos generateBy(final Money purchaseAmount) {
+        int lottoCount = calculatePurchasedLottoCount(purchaseAmount);
         List<Lotto> list = Stream.generate(this::generateSortedUniqueNumbers)
                 .limit(lottoCount)
                 .map(Lotto::from)
@@ -27,5 +29,9 @@ public class RandomLottoGenerator implements LottoGenerator {
                 .stream()
                 .sorted(naturalOrder())
                 .toList();
+    }
+
+    private int calculatePurchasedLottoCount(final Money purchaseAmount) {
+        return purchaseAmount.divideByLottoPrice();
     }
 }

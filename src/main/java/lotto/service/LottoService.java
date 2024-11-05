@@ -3,6 +3,7 @@ package lotto.service;
 import lotto.model.lotto.Lotto;
 import lotto.model.lotto.Lottos;
 import lotto.model.lotto.generator.LottoGenerator;
+import lotto.model.money.Money;
 import lotto.model.rank.DrawResultRankTable;
 import lotto.model.rank.RankCondition;
 
@@ -14,8 +15,8 @@ public class LottoService {
         this.lottoGenerator = lottoGenerator;
     }
 
-    public Lottos offerLottos(final int lottoCount) {
-        return lottoGenerator.generate(lottoCount);
+    public Lottos offerLottos(final Money purchaseAmount) {
+        return lottoGenerator.generateBy(purchaseAmount);
     }
 
     public DrawResultRankTable rankMyLottos(

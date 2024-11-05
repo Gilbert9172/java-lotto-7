@@ -24,6 +24,10 @@ public class Lottos {
         return lottos.stream();
     }
 
+    public int purchasedAmount() {
+        return lottos.size();
+    }
+
     @Override
     public String toString() {
         List<String> strLottos = lottos.stream()

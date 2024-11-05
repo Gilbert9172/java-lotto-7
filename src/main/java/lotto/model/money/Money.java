@@ -57,7 +57,7 @@ public class Money {
         return Money.from(this.value * source);
     }
 
-    public int calculatePurchasedLottoCount() {
+    public int divideByLottoPrice() {
         validateRemainder();
         return (int) (this.value / LOTTO_PRICE.value);
     }

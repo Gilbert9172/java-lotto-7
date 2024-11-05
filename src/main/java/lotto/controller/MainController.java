@@ -31,9 +31,8 @@ public class MainController {
 
     public void run() {
         Money purchasedAmount = inputTerminal.readPurchaseAmount();
-        int lottoCount = purchasedAmount.calculatePurchasedLottoCount();
-        Lottos lottos = lottoService.offerLottos(lottoCount);
-        LottosView lottosView = LottosView.of(lottos, lottoCount);
+        Lottos lottos = lottoService.offerLottos(purchasedAmount);
+        LottosView lottosView = LottosView.from(lottos);
         outputTerminal.writeLottos(lottosView);
 
         Lotto drawResult = inputTerminal.readDrawResult();
