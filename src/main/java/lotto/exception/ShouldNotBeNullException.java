@@ -9,6 +9,6 @@ public class ShouldNotBeNullException extends NullPointerException {
     }
 
     public static ShouldNotBeNullException nullArgument() {
-        return new ShouldNotBeNullException(SHOULD_NOT_BE_NULL);
+        throw new ShouldNotBeNullException(SHOULD_NOT_BE_NULL);
     }
 }

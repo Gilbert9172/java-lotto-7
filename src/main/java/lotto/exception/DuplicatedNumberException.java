@@ -8,6 +8,6 @@ public class DuplicatedNumberException extends IllegalArgumentException {
     }
 
     public static DuplicatedNumberException duplicatedLottoNumber() {
-        return new DuplicatedNumberException(DUPLICATED_LOTTO_NUMBER);
+        throw new DuplicatedNumberException(DUPLICATED_LOTTO_NUMBER);
     }
 }

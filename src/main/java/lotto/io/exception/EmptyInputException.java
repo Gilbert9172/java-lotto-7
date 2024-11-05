@@ -11,14 +11,14 @@ public class EmptyInputException extends IllegalArgumentException {
     }
 
     public static EmptyInputException emptyPurchaseAmount() {
-        return new EmptyInputException(EMPTY_INPUT_PURCHASE_AMOUNT);
+        throw new EmptyInputException(EMPTY_INPUT_PURCHASE_AMOUNT);
     }
 
     public static EmptyInputException emptyLottoNumbers() {
-        return new EmptyInputException(EMPTY_INPUT_LOTTO_NUMBER);
+        throw new EmptyInputException(EMPTY_INPUT_LOTTO_NUMBER);
     }
 
     public static EmptyInputException emptyBonusNumber() {
-        return new EmptyInputException(EMPTY_INPUT_BONUS_NUMBER);
+        throw new EmptyInputException(EMPTY_INPUT_BONUS_NUMBER);
     }
 }
