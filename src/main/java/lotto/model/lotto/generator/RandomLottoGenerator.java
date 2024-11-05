@@ -6,9 +6,8 @@ import static lotto.model.lotto.Lotto.END_INCLUSIVE;
 import static lotto.model.lotto.Lotto.MAX_NUMBER_COUNT;
 import static lotto.model.lotto.Lotto.START_INCLUSIVE;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.LongStream;
+import java.util.stream.Stream;
 import lotto.model.lotto.Lotto;
 import lotto.model.lotto.Lottos;
 
@@ -16,13 +15,11 @@ public class RandomLottoGenerator implements LottoGenerator {
 
     @Override
     public Lottos generate(final int lottoCount) {
-        List<Lotto> lottos = new ArrayList<>();
-        LongStream.range(0, lottoCount).forEach(i -> {
-            List<Integer> sortedUniqueNumbers = generateSortedUniqueNumbers();
-            Lotto lotto = Lotto.from(sortedUniqueNumbers);
-            lottos.add(lotto);
-        });
-        return Lottos.from(lottos);
+        List<Lotto> list = Stream.generate(this::generateSortedUniqueNumbers)
+                .limit(lottoCount)
+                .map(Lotto::from)
+                .toList();
+        return Lottos.from(list);
     }
 
     private List<Integer> generateSortedUniqueNumbers() {
