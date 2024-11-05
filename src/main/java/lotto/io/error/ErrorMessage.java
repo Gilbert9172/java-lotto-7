@@ -13,5 +13,5 @@ public class ErrorMessage {
     public static final String HAS_SMALL_CHANGE = "[ERROR] 1000원 단위로 입력해주세요.";
     public static final String INVALID_LOTTO_LENGTH_RANGE = "[ERROR] 중복되지 않은 6개의 숫자를 입력해주세요.";
     public static final String INVALID_LOTTO_NUMBER_RANGE = "[ERROR] 1부터 45 사이의 숫자를 입력해주세요.";
-    public static final String ALREADY_PICKED_NUMBER = "[ERROR] 1부터 45 사이의 숫자를 입력해주세요.";
+    public static final String ALREADY_PICKED_NUMBER = "[ERROR] 이미 선택된 번호 입니다.";
 }
